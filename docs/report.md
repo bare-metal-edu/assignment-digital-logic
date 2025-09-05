@@ -3,8 +3,10 @@
 ## K-map
 
 Complete the `K-map` for the circuit that you completed in this activity while providing the
-simplified boolean outcome for each of these. In addition, link to each of the schematics you 
+simplified boolean outcome for each of these. In addition, link to the schematic that you 
 made for the circuit in `TinkerCAD`.
+
+* Link: `TODO`
 
 |CD/AB | 00 | 01 | 11 | 10 |
 |------|----|----|----|----|
@@ -12,6 +14,10 @@ made for the circuit in `TinkerCAD`.
 |01    |`TODO`|`TODO`|`TODO`|`TODO`|
 |11    |`TODO`|`TODO`|`TODO`|`TODO`|
 |10    |`TODO`|`TODO`|`TODO`|`TODO`|
+
+| Verified by | Date |
+|:------------|:-----|
+|`TODO`|`TODO`|
 
 ## Speculation
 
