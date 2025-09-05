@@ -94,7 +94,3 @@ _treat it like `2` separate switches_.
 Also like the `Fundamental` assignment, you'll need to complete the `report.md` file in the `docs/` folder on the `hack` branch (it's a separate
 file!). Also, similar to the `Fundamental` branch, you'll need to complete schematics of the circuits in `TinkerCAD` and provide them in the
 `report.md` file.
-
-
-
-### Truth table

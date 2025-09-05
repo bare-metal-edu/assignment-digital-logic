@@ -21,11 +21,11 @@ made for the circuit in `TinkerCAD`.
 
 ## Speculation
 
-> Describe your approach to wiring the circuit you derived. How did you use gates and/or transistors?
+> Describe your approach to wiring the circuit you derived. How did you use gates and/or transistors differently
+> than when you constructed the `Majority Circuit`?
 
 `TODO`
 
-> The assignment contained a small note about wiring. What did you observe about challenges with wiring?
-> What kinds of tips would you give someone approaching this problem for the first time?
+> In what ways is this circuit _more complicated_ than the `Majority Circuit`?
 
 `TODO`
