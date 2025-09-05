@@ -13,6 +13,6 @@
   check: MatchCommandFragment
   options:
       fragment: "3"
-      command: "grep \"DL\\|MS\" docs/report.md -c | awk -F: '{if ($1 > 2) print $0}'"
+      command: "grep \"DL\\|MS\" docs/report.md -c | awk -F: '{if ($1 > 0) print $0}'"
       count: 1
       exact: true
