@@ -4,32 +4,48 @@
 
 | Date              |           |
 |:------------------|:----------|
-| 30 August 2025   | Assigned  |
-| 8 September 2025  | Due       |
+| 5 August 2025   | Assigned  |
+| 11 September 2025  | Due       |
 | Fundamental            | [![Assignment Progress](../../actions/workflows/main.yml/badge.svg?branch=main)](../../actions/workflows/main.yml) |
 | Hack                   | [![Assignment Progress](../../actions/workflows/hack.yml/badge.svg?branch=hack)](../../actions/workflows/hack.yml) |
 
 ## Introduction
 
-This first assignment sees us applying some basic principles of electronics in order to create digital logic from the basic
-building block of a digital circuit: the transistor. For this assignment, you're given:
+This week, we take a step further into digital logic by upgrading from manually-built gates to pre-assembled, multi-channel gates
+that ostensibly make our job easier. But, as with everything in this course, with convenience comes greater range of expression.
+(read: harder logic).
 
-* 1 LED diode
-* 2 NPN transistors
-* 3 resistors (2 @ 2.2K, 1 @ 220)
-* 1 2-switch DIP switch
-* An 830-point breadboard
-* Power supply unit (PSU)
-* 6V power supply
-* Many, many wires
-
-These materials can create a surprising number of digital logic outcomes. In specific, we're going to look at:
+Based on our explorations last time, you have the following digital building blocks available with accompanying datasheets:
 
 * `AND`
 * `OR`
 * `INVERTER` (aka `NOT`)
+* `4`-switch `DIP` switch
 
-We'll learn how to combine these in future weeks to create even more discering logic, but for now we'll start with some basics.
+You'll use these gates to implement a circuit known as the `Majority Circuit`, which follows this truth table:
+
+|A|B|C|D|Out|
+|-|-|-|-|---|
+|0|0|0|0|0  |
+|0|0|0|1|0  |
+|0|0|1|0|0  |
+|0|0|1|1|0  |
+|0|1|0|0|0  |
+|0|1|0|1|0  |
+|0|1|1|0|0  |
+|0|1|1|1|1  |
+|1|0|0|0|0  |
+|1|0|0|1|0  |
+|1|0|1|0|0  |
+|1|0|1|1|1  |
+|1|1|0|0|0  |
+|1|1|0|1|1  |
+|1|1|1|0|1  |
+|1|1|1|1|1  |
+
+Hopefully, scanning this truth table, you'll see why it's called the `Majority Circuit`! One more note: you have access to as many
+transistors as you want. That _may_ make some part of this a bit easier. To that end, a note of caution: wiring on this one is going
+to be..._interesting_.
 
 During this activity, we'll also use a tool called `TinkerCAD` to mock up circuits _before_ we build them in order to make sure that
 we're planning out circuits to avoid overloading parts. To join the classroom for `TinkerCAD` (if you haven't already done so):
@@ -38,7 +54,7 @@ we're planning out circuits to avoid overloading parts. To join the classroom fo
 
 ## Instructions
 
-You must complete and demonstrate each of these circuits to either an instructor or TL using your breadboard and associated parts. This 
+You must complete and demonstrate this circuit to  an instructor or TL using your breadboard and associated parts. This 
 can be done any time during the duration of the assignment until the due date. You do not need to complete them all at once; this acitivty
 can be finished _iteratively_ (that is circuit by circuit over a span of days).
 
@@ -47,74 +63,38 @@ in some truth tables, provide some breadboard layouts, and explain how each of t
 a table for the instructor or TL to fill out when circuits are demonstrated. Again, this table _must be filled out by the instructor
 or a course TL_. (This means that you'll have to have `commit`s authored by one of these folks!)
 
-### `NOT`
-
-<img width="1103" height="768" alt="NPN Transistor - NOT Gate-schematic" src="https://github.com/user-attachments/assets/146bb87c-ea84-4896-9021-592ca9f4d476" />
-
-The following truth table describes the `NOT` gate, a digital logic circuit that "flips" the inputs:
-
-| A | Out |
-|:--|:----|
-| 0 | 1   |
-| 1 | 0   |
-
-### `AND`
-
-<img width="1102" height="1023" alt="NPN Transistor - AND Gate-schematic" src="https://github.com/user-attachments/assets/07bc01ee-2071-44c1-a700-1cb445847075" />
-
-The following truth table describes the `AND` gate, a digital logic circuit that only reports when both
-inputs are `TRUE` or `ON`:
-
-| A | B | Out |
-|:--|:--|:----|
-| 0 | 0 | 0   |
-| 0 | 1 | 0   |
-| 1 | 0 | 0   |
-| 1 | 1 | 1   |
-
-### `OR`
-
-<img width="1312" height="1044" alt="NPN Transistor - OR Gate-schematic" src="https://github.com/user-attachments/assets/5ec91361-7f51-498c-8765-844fadc4be8a" />
-
-The following truth table describes the `OR` gate, a digital logic circuit that only reports when one or
-both inputs are `TRUE` or `ON`:
-
-| A | B | Out |
-|:--|:--|:----|
-| 0 | 0 | 0   |
-| 0 | 1 | 1   |
-| 1 | 0 | 1   |
-| 1 | 1 | 1   |
-
-
 ## Assignment "Hack"
 
-Let's take it a bit further. We've already looked at `NOT`, but did you know that there are two more circuits that deal in negatives: the
-`NAND` and the `NOR`? Below, you'll find the truth tables that represent the desired outcome of each of these circuits which you'll need
-to replicate in order to solve this `Hack`.
+Just for fun (or at least what you instructor calls "fun"), your challenge is to implement a different kind of circuit: the `Equality Comparator`.
+The the following truth table models this circuit:
 
-Like the `Fundamental` assignment, you'll need to complete the `report.md` file in the `docs/` folder on the `hack` branch (it's a separate
+|A|B|C|D|Out|
+|-|-|-|-|---|
+|0|0|0|0|1  |
+|0|0|0|1|0  |
+|0|0|1|0|0  |
+|0|0|1|1|0  |
+|0|1|0|0|0  |
+|0|1|0|1|1  |
+|0|1|1|0|0  |
+|0|1|1|1|1  |
+|1|0|0|0|0  |
+|1|0|0|1|0  |
+|1|0|1|0|1  |
+|1|0|1|1|1  |
+|1|1|0|0|0  |
+|1|1|0|1|0  |
+|1|1|1|0|0  |
+|1|1|1|1|1  |
+
+You'll complete this circuit using the same gates and unlimited access to transistors. However, the easiest way to do this (once you notice the
+pattern of the circuit) is to use `2` `2`-switch `DIP` switches. However, this _can_ be done with a single `4`-switch `DIP` switch if you
+_treat it like `2` separate switches_.
+
+Also like the `Fundamental` assignment, you'll need to complete the `report.md` file in the `docs/` folder on the `hack` branch (it's a separate
 file!). Also, similar to the `Fundamental` branch, you'll need to complete schematics of the circuits in `TinkerCAD` and provide them in the
 `report.md` file.
 
-### `NAND`
 
-Short for `NOT AND`, the `NAND` behaves a bit peculiarly:
 
-| A | B | Out |
-|:--|:--|:----|
-| 0 | 0 | 1   |
-| 0 | 1 | 1   |
-| 1 | 0 | 1   |
-| 1 | 1 | 1   |
-
-### `NOR`
-
-We're interested in _everything but `OR`_ in this case, which means:
-
-| A | B | Out |
-|:--|:--|:----|
-| 0 | 0 | 1   |
-| 0 | 1 | 0   |
-| 1 | 0 | 0   |
-| 1 | 1 | 0   |
+### Truth table
