@@ -29,3 +29,8 @@ made for the circuit in `TinkerCAD`.
 > What kinds of tips would you give someone approaching this problem for the first time?
 
 `TODO`
+
+> In what ways does this _expand_ our understanding of the lessons we learned from basic transistor
+> logic in the previous week?
+
+`TODO`
