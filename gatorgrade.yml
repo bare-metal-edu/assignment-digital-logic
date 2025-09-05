@@ -1,15 +1,15 @@
 - docs/report.md:
-  - description: "[FUNDAMENTAL] docs/report.md word count (150 words) is adequate to describe effort"
+  - description: "[HACK] docs/report.md word count (150 words) is adequate to describe effort"
     check: CountFileWords
     options:
       count: 150
-  - description: "[FUNDAMENTAL] docs/report.md word contains no TODOs"
+  - description: "[HACK] docs/report.md word contains no TODOs"
     check: MatchFileFragment
     options:
       fragment: "TODO"
       count: 0
       exact: true
-- description: "[FUNDAMENTAL] All circuits are signed off by instructor or TL"
+- description: "[HACK] All circuits are signed off by instructor or TL"
   check: MatchCommandFragment
   options:
       fragment: "3"
